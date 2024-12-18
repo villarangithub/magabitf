@@ -1,0 +1,7 @@
+#cloud-config
+runcmd:
+  - apt-get update -y
+  - apt-get install apache2 -y
+  - echo '${index_html}' > /var/www/html/index.html
+  - systemctl enable apache2
+  - systemctl start apache2
